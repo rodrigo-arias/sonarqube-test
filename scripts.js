@@ -38,3 +38,12 @@ window.onload = function() {
     processItems();
 };
 
+// Export functions for testing
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        processItems,
+        saveUserData,
+        checkValue
+    };
+}
+
