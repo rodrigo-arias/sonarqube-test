@@ -17,15 +17,6 @@ function processItems() {
 }
 
 /**
- * Evaluate user input (WARNING: Uses eval - security risk)
- * @param {string} input - The input string to evaluate
- * @returns {*} The result of the evaluation
- */
-function evaluateUserInput(input) {
-    return eval(input);
-}
-
-/**
  * Save user data to localStorage
  */
 function saveUserData() {
@@ -46,3 +37,4 @@ function checkValue(value) {
 window.onload = function() {
     processItems();
 };
+
