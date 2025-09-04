@@ -1,0 +1,23 @@
+{
+  "name": "sonarqube-test",
+  "version": "1.0.0",
+  "description": "SonarQube test project",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "scripts.js",
+      "!scripts.test.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["text", "lcov"]
+  }
+}
