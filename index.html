@@ -1,91 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <title>SonarQube Demo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    .container {
-      width: 80%;
-      margin: auto;
-      overflow: hidden;
-    }
-
-    header {
-      background: #50a8a0;
-      color: white;
-      padding-top: 30px;
-      min-height: 70px;
-      border-bottom: #e8491d 3px solid;
-      padding-bottom: 20px;
-    }
-
-    #branding {
-      float: left;
-    }
-
-    #branding h1 {
-      margin: 0;
-    }
-
-    /* Selector sin usar - problema para SonarQube */
-    .unused-class {
-      color: red;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonarQube Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #50a8a0;
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+            padding-bottom: 20px;
+        }
+        #branding {
+            float: left;
+        }
+        #branding h1 {
+            margin: 0;
+        }
+        .unused-class {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
-  <header>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>SonarQube Demo</h1>
+            </div>
+            <img src="logo.png" alt="Logo">
+        </div>
+    </header>
     <div class="container">
-      <div id="branding">
-        <h1>SonarQube Demo</h1>
-      </div>
-      <!-- Imagen sin atributo alt - problema de accesibilidad -->
-      <img src="logo.png" alt="Logo">
+        <form>
+            <input type="text" placeholder="Buscar...">
+            <button type="submit">Buscar</button>
+        </form>
+        <h2>Bienvenido al Demo</h2>
+        <p>Este sitio tiene problemas deliberados para ser detectados por SonarQube.</p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Columna 1</th>
+                    <th>Columna 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fila 1, Celda 1</td>
+                    <td>Fila 1, Celda 2</td>
+                </tr>
+                <tr>
+                    <td>Fila 2, Celda 1</td>
+                    <td>Fila 2, Celda 2</td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="alert('Hola mundo!')" aria-label="Clic aquí">Clic aquí</button>
+        <script src="scripts.js"></script>
     </div>
-  </header>
-
-  <div class="container">
-    <!-- Etiqueta form sin action - problema para SonarQube -->
-    <form>
-      <input type="text" placeholder="Buscar...">
-      <button type="submit">Buscar</button>
-    </form>
-
-    <h2>Bienvenido al Demo</h2>
-    <p>Este sitio tiene problemas deliberados para ser detectados por SonarQube.</p>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Columna 1</th>
-          <th>Columna 2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Fila 1, Celda 1</td>
-          <td>Fila 1, Celda 2</td>
-        </tr>
-        <tr>
-          <td>Fila 2, Celda 1</td>
-          <td>Fila 2, Celda 2</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- JavaScript inline - mala práctica -->
-    <button onclick="alert('Hola mundo!')" aria-label="Clic aquí">Clic aquí</button>
-
-    <!-- Script al final -->
-    <script src="scripts.js"></script>
-  </div>
 </body>
-
 </html>

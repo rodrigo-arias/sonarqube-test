@@ -1,52 +1,48 @@
-const counter = 0;
 const items = ["uno", "dos", "tres"];
 
-// Función con complejidad alta - código duplicado
+/**
+ * Process all items in the array and return the count
+ * @returns {number} The total count of processed items
+ */
 function processItems() {
-    for (let i = 0; i < items.length; i++) {
-        console.log("Processing item: " + items[i]);
-        
-        // Lógica duplicada deliberadamente
-        if (items[i] === "uno") {
-            counter++;
-            console.log("Incrementado contador a: " + counter);
-        } else if (items[i] === "dos") {
-            counter++;
-            console.log("Incrementado contador a: " + counter);
-        } else {
-            counter++;
-            console.log("Incrementado contador a: " + counter);
-        }
+    let counter = 0;
+    
+    for (const item of items) {
+        console.log("Processing item: " + item);
+        counter++;
+        console.log("Incrementado contador a: " + counter);
     }
     
     return counter;
 }
 
-// Vulnerabilidad típica - evaluación de expresión insegura
+/**
+ * Evaluate user input (WARNING: Uses eval - security risk)
+ * @param {string} input - The input string to evaluate
+ * @returns {*} The result of the evaluation
+ */
 function evaluateUserInput(input) {
-    // Esto es una mala práctica de seguridad que SonarQube detectará
     return eval(input);
 }
 
-// Manejo inseguro de datos
+/**
+ * Save user data to localStorage
+ */
 function saveUserData() {
     const userData = document.getElementById("user-data").value;
-    // Almacenamiento de datos sensibles en localStorage
     localStorage.setItem("userData", userData);
 }
 
-// Código con posible bug - comparación incorrecta
+/**
+ * Check if a value equals zero
+ * @param {*} value - The value to check
+ * @returns {boolean} True if value equals 0, false otherwise
+ */
 function checkValue(value) {
-    // Uso de == en lugar de === (problema de calidad)
-    if (value == 0) {
-        return true;
-    }
-    return false;
+    return value === 0;
 }
 
-// Llamada a funciones al cargar la página
+// Initialize the application when the page loads
 window.onload = function() {
     processItems();
-    
-    const temp = 10;
 };
