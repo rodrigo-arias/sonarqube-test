@@ -1,10 +1,9 @@
-// Variables globales - SonarQube suele detectar esto como problema
-var counter = 0;
-var items = ["uno", "dos", "tres"];
+const counter = 0;
+const items = ["uno", "dos", "tres"];
 
 // Función con complejidad alta - código duplicado
 function processItems() {
-    for (var i = 0; i < items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
         console.log("Processing item: " + items[i]);
         
         // Lógica duplicada deliberadamente
@@ -23,11 +22,6 @@ function processItems() {
     return counter;
 }
 
-// Función sin usar - código muerto
-function unusedFunction() {
-    return "Esta función nunca se usa";
-}
-
 // Vulnerabilidad típica - evaluación de expresión insegura
 function evaluateUserInput(input) {
     // Esto es una mala práctica de seguridad que SonarQube detectará
@@ -36,7 +30,7 @@ function evaluateUserInput(input) {
 
 // Manejo inseguro de datos
 function saveUserData() {
-    var userData = document.getElementById("user-data").value;
+    const userData = document.getElementById("user-data").value;
     // Almacenamiento de datos sensibles en localStorage
     localStorage.setItem("userData", userData);
 }
@@ -54,11 +48,5 @@ function checkValue(value) {
 window.onload = function() {
     processItems();
     
-    // Definición de variables duplicadas - SonarQube detectará esto
-    var temp = 10;
-    // ...código...
-    var temp = 20; // Redefinición
-    
-    // Uso de console.log en producción - mala práctica
-    console.log("La página se cargó completamente");
+    const temp = 10;
 };
